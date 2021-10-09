@@ -11,14 +11,8 @@
 
     <bean id="myFortune" class="com.spring.ioc.demo.HappyFortuneService"></bean>
 
-    <bean id="myCoach" class="com.spring.ioc.demo.BaseballCoach">
+    <bean id="myCoach" class="com.spring.ioc.demo.BaseballCoach" scope="prototype">
         <constructor-arg ref="myFortune"/>
-    </bean>
-
-    <bean id="myCricketCoach" class="com.spring.ioc.demo.CricketCoach">
-        <property name="fortuneService" ref="myFortune"/>
-        <property name="emailAddress" value="testmail@mail.com"/>
-        <property name="team" value="csk"/>
     </bean>
     
 </beans>

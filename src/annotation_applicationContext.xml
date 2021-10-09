@@ -7,19 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Define your beans here -->
-
-    <bean id="myFortune" class="com.spring.ioc.demo.HappyFortuneService"></bean>
-
-    <bean id="myCoach" class="com.spring.ioc.demo.BaseballCoach">
-        <constructor-arg ref="myFortune"/>
-    </bean>
-
-    <bean id="myCricketCoach" class="com.spring.ioc.demo.CricketCoach">
-        <property name="fortuneService" ref="myFortune"/>
-        <property name="emailAddress" value="testmail@mail.com"/>
-        <property name="team" value="csk"/>
-    </bean>
+    <context:component-scan base-package="com.spring.annotation.demo" />
     
 </beans>
 
